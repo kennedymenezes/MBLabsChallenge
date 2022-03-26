@@ -38,7 +38,6 @@ class LoginFragment : Fragment(R.layout.login_fragment) {
         }
 
         viewModel.loginErrorState.observe(viewLifecycleOwner) {
-            println(it)
             Toast.makeText(requireContext(), "Erro", Toast.LENGTH_SHORT).show()
         }
 
