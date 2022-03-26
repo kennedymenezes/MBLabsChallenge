@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.View
 import android.widget.Toast
 import com.example.mblabschallenge.R
+import com.example.mblabschallenge.dashboard.ui.fragment.DashboardFragment
 import com.example.mblabschallenge.databinding.LoginFragmentBinding
 import com.example.mblabschallenge.login.ui.MainActivity
 import com.example.mblabschallenge.login.ui.viewmodel.LoginViewModel
@@ -35,6 +36,7 @@ class LoginFragment : Fragment(R.layout.login_fragment) {
     private fun setupObservers(){
         viewModel.loginState.observe(viewLifecycleOwner) {
             Toast.makeText(requireContext(), "Sucesso", Toast.LENGTH_SHORT).show()
+            (requireActivity() as MainActivity).changeFragment(DashboardFragment())
         }
 
         viewModel.loginErrorState.observe(viewLifecycleOwner) {
