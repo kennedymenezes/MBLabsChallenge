@@ -181,13 +181,25 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/tv_payment_method_hint"/>
 
+            <EditText
+                android:id="@+id/et_card_fields"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/spr_payment_method"
+                android:layout_margin="16dp"
+                android:visibility="gone"
+                android:hint="@string/event_details_card_number_hint"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"/>
+
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/mbt_buy"
-                app:layout_constraintTop_toBottomOf="@id/spr_payment_method"
+                app:layout_constraintTop_toBottomOf="@id/et_card_fields"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 android:layout_margin="16dp"
                 android:text="@string/event_details_button_buy_text"
+                android:enabled="false"
                 app:layout_constraintBottom_toBottomOf="parent"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"/>
