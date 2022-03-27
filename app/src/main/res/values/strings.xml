@@ -8,4 +8,13 @@
     <string name="register_main_banner">Cadastre-se</string>
     <string name="register_back_button">Voltar</string>
     <string name="register_sign_up_button">Registrar</string>
+    <string name="event_details_price_placeholder">Valor do evento:</string>
+    <string name="event_details_state_placeholder">Estado do evento:</string>
+    <string name="event_details_city_placeholder">Cidade do evento:</string>
+    <string name="event_details_type_placeholder">Tipo do evento:</string>
+    <string name="event_details_desc_placeholder">Descrição</string>
+    <string name="event_details_half_entry_placeholder">Meia entrada</string>
+    <string name="event_details_half_entry_hint">CIA</string>
+    <string name="event_details_payment_method_hint">Metodo de pagamento</string>
+    <string name="event_details_button_buy_text">Comprar</string>
 </resources>

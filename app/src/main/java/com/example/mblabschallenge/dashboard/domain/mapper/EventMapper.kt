@@ -16,7 +16,8 @@ class EventMapper : IMapper<QuerySnapshot, List<EventModel>> {
                     event_city = eventResponseFirebase["event_city"] as String,
                     event_state = eventResponseFirebase["event_state"] as String,
                     event_type = eventResponseFirebase["event_type"] as String,
-                    price = eventResponseFirebase["event_price"] as String
+                    price = eventResponseFirebase["event_price"] as String,
+                    event_desc = eventResponseFirebase["event_desc"] as String
                 )
             )
         }
