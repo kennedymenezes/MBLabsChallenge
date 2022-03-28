@@ -6,10 +6,11 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.mblabschallenge.R
+import com.example.mblabschallenge.dashboard.domain.interfaces.ClickEvent
 import com.example.mblabschallenge.databinding.ItemEventBinding
 import com.example.mblabschallenge.login.domain.model.EventModel
 
-class DashboardAdapter(private val eventList: List<EventModel>) :
+class DashboardAdapter(private val eventList: List<EventModel>,private val eventClickEvent: ClickEvent) :
     RecyclerView.Adapter<DashboardAdapter.DashboardViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): DashboardViewHolder {
@@ -20,6 +21,9 @@ class DashboardAdapter(private val eventList: List<EventModel>) :
     override fun onBindViewHolder(holder: DashboardViewHolder, position: Int) {
         eventList[position].apply {
             holder.bind(this)
+            holder.itemView.setOnClickListener {
+                eventClickEvent.eventClicked(this)
+            }
         }
     }
 
