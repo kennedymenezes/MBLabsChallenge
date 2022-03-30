@@ -13,26 +13,31 @@ import com.example.mblabschallenge.dashboard.ui.viewmodel.DashboardViewModel
 import com.example.mblabschallenge.databinding.DashboardFragmentBinding
 import com.example.mblabschallenge.eventdetails.ui.fragment.EventDetailsFragment
 import com.example.mblabschallenge.login.domain.model.EventModel
+import com.example.mblabschallenge.utils.di.LoadingDialog
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class DashboardFragment : Fragment(R.layout.dashboard_fragment), ClickEvent {
 
     private val viewModel: DashboardViewModel by viewModel()
     private lateinit var binding: DashboardFragmentBinding
+    private val loadingDialog = LoadingDialog()
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding = DashboardFragmentBinding.bind(view)
         setupObservers()
         viewModel.getEventList()
+        loadingDialog.show(requireActivity().supportFragmentManager, null)
     }
 
     private fun setupObservers(){
         viewModel.eventList.observe(viewLifecycleOwner){
+            loadingDialog.dismiss()
             setupEventsList(it)
         }
 
         viewModel.error.observe(viewLifecycleOwner) {
+            loadingDialog.dismiss()
             Toast.makeText(requireContext(), "Um erro aconteceu", Toast.LENGTH_SHORT).show()
         }
     }

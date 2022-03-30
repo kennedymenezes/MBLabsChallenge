@@ -36,8 +36,11 @@ class DashboardAdapter(private val eventList: List<EventModel>,private val event
         private val binding = ItemEventBinding.bind(itemView)
 
         fun bind(eventModel: EventModel) {
-            binding.tvEventName.text = eventModel.event_name
+            binding.tvEventName.text = "Nome do evento: ${eventModel.event_name}"
             Glide.with(itemView.context).load(eventModel.event_image).into(binding.ivEventImage)
+            binding.tvEventCity.text = "Cidade: ${eventModel.event_city}"
+            binding.tvEventState.text = "Estado: ${eventModel.event_state}"
+            binding.tvEventPrice.text = "Valor do evento: ${eventModel.price}"
         }
     }
 }

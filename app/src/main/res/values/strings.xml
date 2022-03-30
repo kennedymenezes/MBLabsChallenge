@@ -18,4 +18,5 @@
     <string name="event_details_payment_method_hint">Metodo de pagamento</string>
     <string name="event_details_button_buy_text">Comprar</string>
     <string name="event_details_card_number_hint">Numero do cartao</string>
+    <string name="loading_dialog_disclaimer">Um Momento estamos carregando suas informações</string>
 </resources>
