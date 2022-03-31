@@ -19,4 +19,6 @@
     <string name="event_details_button_buy_text">Comprar</string>
     <string name="event_details_card_number_hint">Numero do cartao</string>
     <string name="loading_dialog_disclaimer">Um Momento estamos carregando suas informações</string>
+    <string name="event_details_vacine_button">Comprovante de vacinação</string>
+    <string name="confirmation_message">Vamos verificar todas as informações, com tudo confirmado enviaremos o ingresso para seu email cadastrado</string>
 </resources>

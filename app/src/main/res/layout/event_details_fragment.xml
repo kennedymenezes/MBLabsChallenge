@@ -169,40 +169,61 @@
                 android:layout_margin="16dp"
                 android:text="@string/event_details_payment_method_hint"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/et_half_entry"/>
+                app:layout_constraintTop_toBottomOf="@id/et_half_entry" />
 
             <Spinner
                 android:id="@+id/spr_payment_method"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:padding="16dp"
                 android:layout_margin="16dp"
+                android:padding="16dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/tv_payment_method_hint"/>
+                app:layout_constraintTop_toBottomOf="@id/tv_payment_method_hint" />
 
             <EditText
                 android:id="@+id/et_card_fields"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:hint="@string/event_details_card_number_hint"
+                android:visibility="gone"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/spr_payment_method"
+                app:layout_constraintTop_toBottomOf="@id/spr_payment_method" />
+
+            <ImageView
+                android:id="@+id/iv_vacine"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
                 android:layout_margin="16dp"
                 android:visibility="gone"
-                android:hint="@string/event_details_card_number_hint"
+                android:layout_marginBottom="24dp"
+                app:layout_constraintBottom_toTopOf="@id/mbt_buy"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/et_card_fields" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/mbt_photo"
                 android:layout_width="0dp"
-                android:layout_height="wrap_content"/>
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:text="@string/event_details_vacine_button"
+                app:layout_constraintStart_toEndOf="@id/iv_vacine"
+                app:layout_constraintTop_toBottomOf="@id/et_card_fields" />
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/mbt_buy"
-                app:layout_constraintTop_toBottomOf="@id/et_card_fields"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:enabled="false"
+                android:text="@string/event_details_button_buy_text"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                android:layout_margin="16dp"
-                android:text="@string/event_details_button_buy_text"
-                android:enabled="false"
-                app:layout_constraintBottom_toBottomOf="parent"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"/>
+                app:layout_constraintTop_toBottomOf="@id/mbt_photo" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
